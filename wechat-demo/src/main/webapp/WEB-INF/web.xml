@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+						http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<servlet>
+		<display-name>Archetype Created Web Application</display-name>
+		<servlet-name>WeChatServlet</servlet-name>
+		<servlet-class>demo.servlet.WeChatServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WeChatServlet</servlet-name>
+		<url-pattern>/wechat.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>WechatCheckServlet</servlet-name>
+		<servlet-class>demo.servlet.WechatCheckServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WechatCheckServlet</servlet-name>
+		<url-pattern>/check.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateMenuServlet</servlet-name>
+		<servlet-class>demo.servlet.CreateMenuServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CreateMenuServlet</servlet-name>
+		<url-pattern>/create.do</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+	<listener-class>wechat.listener.ProListener</listener-class>
+	</listener>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
