@@ -19,7 +19,7 @@ public class TulingApiProcess {
 	 * @return
 	 */
 	public String getTulingResult(String content) {
-		String apiUrl = "http://www.tuling123.com/openapi/api?key=b24ccf134297448889031c194e60316e&info=";
+		String apiUrl = "http://www.tuling123.com/openapi/api?key=xxx&info=";
 
 		String param = "";
 		try {
