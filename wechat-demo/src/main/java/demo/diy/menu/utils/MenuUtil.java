@@ -3,23 +3,16 @@ package demo.diy.menu.utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-
-import com.google.gson.Gson;
 
 import demo.entity.Button;
 import demo.entity.CommonButton;
@@ -28,7 +21,6 @@ import demo.entity.Menu;
 import demo.entity.ViewButton;
 import net.sf.json.JSONObject;
 import wechat.listener.AccessTokenCache;
-import wechat.process.AccessTokenApiProcess;
 
 public class MenuUtil {
 	/**
@@ -171,13 +163,13 @@ public class MenuUtil {
 //				+ "IohIakwjiCRQc12HUql9JNG9krnU8s3Cjx1rywgS448kpXERqnzG7gI5kL0YmO89L1UNk5XxbJiyy_P61Whm4b2a4a5P1uNuWewxBquh2eJuWj39xtEJ4PAQqklRbVFuJCJhAGAWPW";
 		+ AccessTokenCache.getToken();
 
-		String param = "";
-		try {
-			param = url + URLEncoder.encode("", "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		String param = "";
+//		try {
+//			param = url + URLEncoder.encode("", "UTF-8");
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 //		HttpGet request = new HttpGet(param);
 		HttpPost httpPost = new HttpPost(url);
 

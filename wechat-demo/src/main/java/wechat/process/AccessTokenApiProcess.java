@@ -12,12 +12,16 @@ import org.json.JSONObject;
 
 public class AccessTokenApiProcess {
 
+	private static final String APPID = "APPID";// 换成自己的
+	private static final String SECRET = "SECRET";// 换成自己的
+
 	public String getAccessTokenResult() {
-		String apiUrl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxa28ef2be12d087d4&secret=ba9ce30c6d0780ec0a7179035fb02480";
+		String apiUrl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + APPID
+				+ "&secret=" + SECRET;
 
 		String param = "";
 		try {
-			param = apiUrl + URLEncoder.encode("","UTF-8");
+			param = apiUrl + URLEncoder.encode("", "UTF-8");
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
@@ -39,11 +43,12 @@ public class AccessTokenApiProcess {
 		}
 		try {
 			JSONObject json = new JSONObject(result);
-//			Gson gs = new Gson();
-//			String jsonObject = gs.toJson(result);
-			/*if (100000 == json.getInt("code")) {
-				result = json.getString("text");
-			}*/
+			// Gson gs = new Gson();
+			// String jsonObject = gs.toJson(result);
+			/*
+			 * if (100000 == json.getInt("code")) { result =
+			 * json.getString("text"); }
+			 */
 			System.out.println("json access_token: " + json.getString("access_token"));
 			result = json.getString("access_token");
 		} catch (Exception e) {

@@ -1,5 +1,7 @@
 package demo.entity;
 
+import java.util.Arrays;
+
 public class Menu {
 	private ComplexButton[] button;
 
@@ -9,5 +11,10 @@ public class Menu {
 
 	public void setButton(ComplexButton[] button) {
 		this.button = button;
+	}
+
+	@Override
+	public String toString() {
+		return "Menu [button=" + Arrays.toString(button) + "]";
 	}
 }

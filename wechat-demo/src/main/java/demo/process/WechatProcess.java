@@ -22,8 +22,10 @@ public class WechatProcess {
 	 * @param xml
 	 *            接收到的微信数据
 	 * @return 最终的解析结果（xml格式数据）
+	 * @throws IOException
+	 * @throws ClientProtocolException
 	 */
-	public String processWeChatMag(String xml) {
+	public String processWeChatMag(String xml) throws ClientProtocolException, IOException {
 		System.out.println("接收到的微信数据: " + xml);
 		System.out.println();
 		/** 解析xml数据 */
@@ -32,28 +34,23 @@ public class WechatProcess {
 		System.out.println();
 		/** 以文本消息为例，调用机器人api接口，获取回复内容 */
 		String result = "";
-		// if ("text".endsWith(xmlEntity.getMsgType())) {
-		// result = new
-		// TulingApiProcess().getTulingResult(xmlEntity.getContent());
-		// }
-		if (EVENT_SUBSCRIBE.equals(xmlEntity.getEvent())) {
+//		if ("text".endsWith(xmlEntity.getMsgType())) {
+//			result = new TulingApiProcess().getTulingResult(xmlEntity.getContent());
+//		}
+//		if (EVENT_SUBSCRIBE.equals(xmlEntity.getEvent())) {
+//			result = new FormatXmlProcess().formatXmlAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(),
+//					returnContent());
+//		} else if ("text".endsWith(xmlEntity.getMsgType())) {
+//			result = new TulingApiProcess().getTulingResult(xmlEntity.getContent());
+//		}
+
+		if (UserInfoApiProcess.isSubscribe(xmlEntity.getFromUserName())) {
+			result = new FormatXmlProcess().formatXmlAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(),
+					xmlEntity.getContent());
+		} else {
 			result = new FormatXmlProcess().formatXmlAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(),
 					returnContent());
-		} else if ("text".endsWith(xmlEntity.getMsgType())) {
-			result = new TulingApiProcess().getTulingResult(xmlEntity.getContent());
 		}
-
-		// if (UserInfoApiProcess.isSubscribe(xmlEntity.getFromUserName())) {
-		// result = new
-		// FormatXmlProcess().formatXmlAnswer(xmlEntity.getFromUserName(),
-		// xmlEntity.getToUserName(),
-		// xmlEntity.getContent());
-		// } else {
-		// result = new
-		// FormatXmlProcess().formatXmlAnswer(xmlEntity.getFromUserName(),
-		// xmlEntity.getToUserName(),
-		// returnContent());
-		// }
 
 		return result;
 	}
