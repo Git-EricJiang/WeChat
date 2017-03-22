@@ -15,4 +15,8 @@ public class CommonButton extends Button {
 	public void setKey(String key) {
 		this.key = key;
 	}
+	@Override
+	public String toString() {
+		return "CommonButton [type=" + type + ", key=" + key + "]";
+	}
 }

@@ -21,5 +21,9 @@ public class ViewButton extends Button {
 		this.url = url;
 	}
 
+	@Override
+	public String toString() {
+		return "ViewButton [type=" + type + ", url=" + url + "]";
+	}
 
 }

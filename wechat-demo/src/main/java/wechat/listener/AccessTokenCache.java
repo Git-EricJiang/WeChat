@@ -27,6 +27,10 @@ public class AccessTokenCache {
 		return (String) map.get(ACCESS_TOKEN);
 	}
 
+	/**
+	 * test
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Long time = new Date().getTime();
 		System.out.println("new time: " +  new Date().getTime());
