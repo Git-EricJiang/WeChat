@@ -50,7 +50,7 @@ public class RequstApiProcess {
 		try {
 			HttpResponse response = HttpClients.createDefault().execute(request);
 			if (response.getStatusLine().getStatusCode() == 200) {
-				result = EntityUtils.toString(response.getEntity());
+				result = EntityUtils.toString(response.getEntity(), "UTF-8");
 			}
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
