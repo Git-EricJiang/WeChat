@@ -15,6 +15,7 @@ public class ReceiveXmlEntity {
 	private String Precision = "";
 	private String PicUrl = "";
 	private String MediaId = "";
+	private String MenuId = "";
 	private String Title = "";
 	private String Description = "";
 	private String Url = "";
@@ -130,6 +131,14 @@ public class ReceiveXmlEntity {
 		MediaId = mediaId;
 	}
 
+	public String getMenuId() {
+		return MenuId;
+	}
+
+	public void setMenuId(String menuId) {
+		MenuId = menuId;
+	}
+
 	public String getTitle() {
 		return Title;
 	}
@@ -215,10 +224,10 @@ public class ReceiveXmlEntity {
 		return "ReceiveXmlEntity [ToUserName=" + ToUserName + ", FromUserName=" + FromUserName + ", CreateTime="
 				+ CreateTime + ", MsgType=" + MsgType + ", MsgId=" + MsgId + ", Event=" + Event + ", EventKey="
 				+ EventKey + ", Ticket=" + Ticket + ", Latitude=" + Latitude + ", Longitude=" + Longitude
-				+ ", Precision=" + Precision + ", PicUrl=" + PicUrl + ", MediaId=" + MediaId + ", Title=" + Title
-				+ ", Description=" + Description + ", Url=" + Url + ", Location_X=" + Location_X + ", Location_Y="
-				+ Location_Y + ", Scale=" + Scale + ", Label=" + Label + ", Content=" + Content + ", Format=" + Format
-				+ ", Recognition=" + Recognition + "]";
+				+ ", Precision=" + Precision + ", PicUrl=" + PicUrl + ", MediaId=" + MediaId + ", MenuId=" + MenuId
+				+ ", Title=" + Title + ", Description=" + Description + ", Url=" + Url + ", Location_X=" + Location_X
+				+ ", Location_Y=" + Location_Y + ", Scale=" + Scale + ", Label=" + Label + ", Content=" + Content
+				+ ", Format=" + Format + ", Recognition=" + Recognition + "]";
 	}
 
 }
