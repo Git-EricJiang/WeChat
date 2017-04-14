@@ -20,9 +20,11 @@ import demo.entity.ComplexButton;
 import demo.entity.Menu;
 import demo.entity.ViewButton;
 import net.sf.json.JSONObject;
+import wechat.entity.util.constant.AppInfoConstant;
 import wechat.listener.AccessTokenCache;
 
 public class MenuUtil {
+
 	/**
 	 * 封装菜单数据
 	 */
@@ -44,10 +46,10 @@ public class MenuUtil {
 		cx_1.setSub_button(new Button[] { cb_1, cb_2 });
 
 		// 继续创建二级菜单
-		CommonButton cb_3 = new CommonButton();
-		cb_3.setKey("key3");
-		cb_3.setName("子菜单3");
-		cb_3.setType("click");
+		ViewButton cb_3 = new ViewButton();
+		cb_3.setName("授权");
+		cb_3.setType("view");
+		cb_3.setUrl("https://open.weixin.qq.com/connect/oauth2/authorize?appid="+AppInfoConstant.APP_ID+"&redirect_uri="+AppInfoConstant.ENCODE_URL+"&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
 
 		ViewButton cb_4 = new ViewButton();
 		cb_4.setName("搜索");

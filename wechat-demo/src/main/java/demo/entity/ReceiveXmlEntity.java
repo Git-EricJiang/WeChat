@@ -26,6 +26,15 @@ public class ReceiveXmlEntity {
 	private String Content = "";
 	private String Format = "";
 	private String Recognition = "";
+	private String Encrypt = "";
+
+	public String getEncrypt() {
+		return Encrypt;
+	}
+
+	public void setEncrypt(String encrypt) {
+		Encrypt = encrypt;
+	}
 
 	public String getToUserName() {
 		return ToUserName;
@@ -227,7 +236,7 @@ public class ReceiveXmlEntity {
 				+ ", Precision=" + Precision + ", PicUrl=" + PicUrl + ", MediaId=" + MediaId + ", MenuId=" + MenuId
 				+ ", Title=" + Title + ", Description=" + Description + ", Url=" + Url + ", Location_X=" + Location_X
 				+ ", Location_Y=" + Location_Y + ", Scale=" + Scale + ", Label=" + Label + ", Content=" + Content
-				+ ", Format=" + Format + ", Recognition=" + Recognition + "]";
+				+ ", Format=" + Format + ", Recognition=" + Recognition + ", Encrypt=" + Encrypt + "]";
 	}
 
 }

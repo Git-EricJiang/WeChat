@@ -10,14 +10,13 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
+import wechat.entity.util.constant.AppInfoConstant;
+
 public class AccessTokenApiProcess {
 
-	private static final String APPID = "APPID";// 换成自己的
-	private static final String SECRET = "SECRET";// 换成自己的
-
 	public String getAccessTokenResult() {
-		String apiUrl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + APPID
-				+ "&secret=" + SECRET;
+		String apiUrl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + AppInfoConstant.APP_ID
+				+ "&secret=" + AppInfoConstant.APP_SECRET;
 
 		String param = "";
 		try {

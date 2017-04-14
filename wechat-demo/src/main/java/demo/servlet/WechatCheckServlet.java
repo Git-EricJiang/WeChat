@@ -19,6 +19,7 @@ import javax.websocket.Session;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import demo.diy.menu.utils.MenuUtil;
+import demo.process.WechatProcess;
 import wechat.process.InvokeApiProcess;
 
 public class WechatCheckServlet extends HttpServlet {
@@ -32,11 +33,14 @@ public class WechatCheckServlet extends HttpServlet {
 		InputStreamReader isr = new InputStreamReader(is, "UTF-8");
 		BufferedReader br = new BufferedReader(isr);
 		String s = "";
-		s = br.readLine();
-		if (s != null) {
+//		s = br.readLine();
+//		if (s != null) {
+//			sb.append(s);
+//		}
+		while ((s = br.readLine()) != null) {
 			sb.append(s);
 		}
-
+		
 		String xml = sb.toString();
 
 		String signature = request.getParameter("signature");
@@ -49,16 +53,17 @@ public class WechatCheckServlet extends HttpServlet {
 			if (echostr != null && echostr.length() > 1) {
 				result = echostr;
 
-//				int status = MenuUtil.createMenu(MenuUtil.getMenu());
-//				if (status == 0) {
-//					System.out.println("菜单创建成功！");
-//				} else {
-//					System.out.println("菜单创建失败！");
-//					System.out.println(status);
-//				}
+				int status = MenuUtil.createMenu(MenuUtil.getMenu());
+				if (status == 0) {
+					System.out.println("菜单创建成功！");
+				} else {
+					System.out.println("菜单创建失败！");
+					System.out.println(status);
+				}
 			} else {//处理正常微信流程
 				// 获取token 
-				result = new InvokeApiProcess().processApi(xml);
+//				result = new InvokeApiProcess().processApi(xml);
+				result = new WechatProcess().processWeChatMag(xml);
 			}
 
 			try {

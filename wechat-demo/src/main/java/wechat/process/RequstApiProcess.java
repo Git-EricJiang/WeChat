@@ -59,7 +59,7 @@ public class RequstApiProcess {
 		}
 
 		if (result != null) {
-			System.out.println("\nresult: " + result);
+			System.out.println("\nRequstApiProcess.getRequstApi.result: " + result);
 			JSONObject json = new JSONObject(result);
 			// JSONObject json = JSONObject.fromObject(request);
 			if (jsonKey != null && !"".equals(jsonKey)) {
@@ -95,7 +95,7 @@ public class RequstApiProcess {
 
 //		System.out.println("result: " + result);
 		JSONObject json = new JSONObject(result);
-		System.out.println("\njson: " + json);
+		System.out.println("\nRequstApiProcess.postRequstByOrgApache.json: " + json);
 
 		return result;
 	}
