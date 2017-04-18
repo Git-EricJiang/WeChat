@@ -45,6 +45,16 @@
 		<url-pattern>/response</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>webServlet</servlet-name>
+		<servlet-class>demo.servlet.WebLoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>webServlet</servlet-name>
+		<url-pattern>/login.do</url-pattern>
+	</servlet-mapping>
+
 	<listener>
 	<listener-class>wechat.listener.ProListener</listener-class>
 	</listener>

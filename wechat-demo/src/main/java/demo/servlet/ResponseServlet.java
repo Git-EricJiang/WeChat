@@ -31,11 +31,13 @@ public class ResponseServlet extends HttpServlet {
 		JSONObject json = new JSONObject(rs);
 		if (!json.has("errcode")) {
 			String ul = "https://api.weixin.qq.com/sns/userinfo?access_token="+ json.getString("access_token") +"&openid="+ json.getString("openid") +"&lang=zh_CN";
-			String openid = RequstApiProcess.getRequstApi(ul, null)+"";
-			System.out.println(openid);
+			String rslt = RequstApiProcess.getRequstApi(ul, null)+"";
+			System.out.println(rslt);
+			
+			req.getSession().setAttribute("rslt", rslt);
 		}
 		
-		resp.sendRedirect("/");
+		resp.sendRedirect("/jsp/recall.jsp");
 	}
 
 	@Override
